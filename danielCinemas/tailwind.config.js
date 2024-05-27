@@ -6,11 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-      colors:{
-        'primary-tutopiro': #132355;
+      colors: {
+        "primary-raul": "#735ABC"
       }
     },
   },
   plugins: [],
 }
-

@@ -1,7 +1,9 @@
-function PageNotFound(){
-    return(
-        <h1>Page not found</h1>
-    )
+function PageNotFound() {
+    return (
+        <>
+            <h1>404</h1>
+        </>
+    );
 }
 
-export default PageNotFound
+export default PageNotFound;

@@ -2,20 +2,20 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Filmes from './pages/Filmes.jsx'
-import Sobre from './pages/Sobre.jsx'
-import Contato from './pages/Contato.jsx'
-import PageNotFound from './pages/PageNotFound.jsx'
-import Home from './pages/Home.jsx'
+import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom'
+import PageNotFound from './Pages/PageNotFound.jsx'
+import Contato from './Pages/Contato.jsx'
+import Sobre from './Pages/Sobre.jsx'
+import Filmes from './Pages/Filmes.jsx'
+import Home from './Pages/Home.jsx'
 
 const router = createBrowserRouter(
   [
     {
-      path: '/',
-      element: <App />,
+      path: "/",
+      element: <App/>,
       children: [
-        {index: true, element: <Home/>},
+        {index: true, element: <Home/> },
         {path: "filmes", element: <Filmes/>},
         {path: "sobre", element: <Sobre/>},
         {path: "contato", element: <Contato/>},

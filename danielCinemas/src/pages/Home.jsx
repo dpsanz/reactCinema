@@ -1,36 +1,32 @@
 import data from '../../artigos.json'
 
 function Home() {
-    console.log(data)
-    return (
+    return ( 
         <>
-            <main>
-                <input type="text" name="busca" id="busca" placeholder="Digite aqui sua busca"/>
-                <div className="lista-filmes">
-                    {
-                        data.map(
-                            filme => (
-                                <div className="card" key={filme.title}>
-                                    <h2>{filme.title}</h2>  
-                                    
-                                    <img className="mb-2" src={filme.image} alt={filme.image} />
-                                   
-                                    <div className="tag">
+        <main>
+            <div className="grid grid-cols-3 gap-4 mt-8">
+            {data.map((filme,index) =>(
+                <div className='card mx-5 gap-3' key={index}>
+                    <h1 className='text-xl font-medium mb-4'>{filme.title}</h1>
+                    <img src={filme.image} alt={filme.title} className='w-80'/>
 
-                                      {filme.tags.map(tag =>(
-                                        <span key={tag} className='text purple-900'>
-                                          {tag}
-                                        </span>
-                                      ))}
-                                    </div>
-                                </div>
-                            )
-                        )
-                    }
+                    <div className='tag flex space-x-10 mt-2 mb-4'>
+                        {filme.tags.map(tag => (
+                            <span key={tag} className='colorTxt'>{tag}</span>
+                        ))}
+                    </div>
+
+                    <div className='text text-black mb-7 text-justify max-w-80'>
+                        {filme.text.map(text => (
+                            <span key={text} className='colorTxt'>{text}</span>
+                        ))}
+                    </div>
                 </div>
+                ))}
+            </div>
             </main>
         </>
-    );
+     );
 }
-
 export default Home;
+
